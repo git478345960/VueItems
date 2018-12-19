@@ -11,6 +11,8 @@ import Person from '../components/community/Person'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
+  linkActiveClass: 'active',
+  linkExactActiveClass: 'exactActive',
   routes: [
     {
       path: '/home',
@@ -18,7 +20,7 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
+      path: '/about/:id?',
       name: 'About',
       component: About
     },

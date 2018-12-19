@@ -1,5 +1,8 @@
 <template>
-  <div>关于</div>
+  <div>关于
+{{$route.params.id}}
+
+  </div>
 
 </template>
 

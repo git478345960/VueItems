@@ -18,5 +18,10 @@ export default{
 </script>
 
 <style scoped>
-
+.active{
+    color:blue;
+  }
+  .exactActive{
+    color:red;
+  }
 </style>
