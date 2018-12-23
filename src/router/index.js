@@ -8,6 +8,8 @@ import Student from '@/components/Student'
 import Academic from '../components/community/Academic'
 import Download from '../components/community/Download'
 import Person from '../components/community/Person'
+import Question from '../components/Question'
+import Error from '../components/Error'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -17,7 +19,10 @@ export default new Router({
     {
       path: '/home',
       name: 'Home',
-      component: Home
+      components: {
+        default: Home,
+        'academic': Academic
+      }
     },
     {
       path: '/about/:id?',
@@ -28,19 +33,20 @@ export default new Router({
       path: '/community',
       name: 'Community',
       component: Community,
+      redirect: '/community/academic',
       children:[
         {
-          path: 'community/academic',
+          path: 'academic',
           name: 'Academic',
           component: Academic,
         },
         {
-          path: 'community/download',
+          path: 'download',
           name: 'Download',
           component: Download,
         },
         {
-          path: 'community/person',
+          path: 'person',
           name: 'Person',
           component: Person,
         }
@@ -55,6 +61,28 @@ export default new Router({
       path: '/student',
       name: 'Student',
       component: Student
+    },
+    {
+      path: '/question/:id',
+      name: 'question',
+      component: Question
+    },
+    {
+      path: '/error.html',
+      name: 'error',
+      component: Error
+    },
+    {
+      path: '*',
+      redirect(to){
+        console.log(to)
+        if(to.path == '/'){
+          return '/home'
+        }else{
+          return {name: 'error'}
+        }
+      }
     }
+
   ]
 })
