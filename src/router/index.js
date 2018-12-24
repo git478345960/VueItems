@@ -11,7 +11,7 @@ import Person from '../components/community/Person'
 import Question from '../components/Question'
 import Error from '../components/Error'
 Vue.use(Router)
-export default new Router({
+const router =  new Router({
   mode: 'history',
   linkActiveClass: 'active',
   linkExactActiveClass: 'exactActive',
@@ -39,6 +39,15 @@ export default new Router({
           path: 'academic',
           name: 'Academic',
           component: Academic,
+          // 独享守卫
+          // beforeEnter(to,from,next){
+          //   const answer =  confirm('你还没有登陆，你确定要登陆吗？');
+          //   if(answer){
+          //     next({name:'Person'})
+          //   }else{
+          //     next(false);
+          //   }
+          // }
         },
         {
           path: 'download',
@@ -75,7 +84,6 @@ export default new Router({
     {
       path: '*',
       redirect(to){
-        console.log(to)
         if(to.path == '/'){
           return '/home'
         }else{
@@ -86,3 +94,20 @@ export default new Router({
 
   ]
 })
+// 全局守卫
+// router.beforeEach((to,from,next) =>{
+//   if(to.path === '/community/academic'){
+//     const answer =  confirm('你还没有登陆，你确定要登陆吗？');
+//     if(answer){
+//       next({name:'Person'})
+//     }else{
+//       next(false);
+//     }
+//   }else{
+//     next();
+//   }
+// })
+
+
+
+export default router;

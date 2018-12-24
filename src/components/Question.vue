@@ -10,7 +10,7 @@ export default {
     created () {
         const questionId = this.$route.params.id;
         const index = this.questionList.findIndex( item => item.questionId == questionId)
-        console.log(questionId);
+        // console.log(questionId); 
         // console.log(this);
         if(index == -1){
             // this.$router.go(-1);
