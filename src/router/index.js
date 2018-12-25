@@ -36,7 +36,7 @@ const router =  new Router({
       redirect: '/community/academic',
       children:[
         {
-          path: 'academic',
+          path: 'academic', 
           name: 'Academic',
           component: Academic,
           // 独享守卫
