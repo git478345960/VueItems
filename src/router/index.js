@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import About from '@/components/About'
 import Community from '@/components/Community'
-import Home from '@/components/Home'
+// import Home from '@/components/Home'
 import Learn from '@/components/learn'
 import Student from '@/components/Student'
 import Academic from '../components/community/Academic'
@@ -10,6 +10,7 @@ import Download from '../components/community/Download'
 import Person from '../components/community/Person'
 import Question from '../components/Question'
 import Error from '../components/Error'
+const Home = () => import('@/components/Home');//懒加载
 Vue.use(Router)
 const router =  new Router({
   mode: 'history',
@@ -34,11 +35,15 @@ const router =  new Router({
       name: 'Community',
       component: Community,
       redirect: '/community/academic',
+      meta:{
+        login: false
+      },
       children:[
         {
           path: 'academic', 
           name: 'Academic',
           component: Academic,
+
           // 独享守卫
           // beforeEnter(to,from,next){
           //   const answer =  confirm('你还没有登陆，你确定要登陆吗？');
@@ -48,6 +53,7 @@ const router =  new Router({
           //     next(false);
           //   }
           // }
+
         },
         {
           path: 'download',
