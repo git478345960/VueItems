@@ -1,7 +1,7 @@
 <template>
 <div>
     <ul>
-        <router-link 
+        <router-link
         v-for ="item in questionList"
         :key = "item.questionId"
         tag= "li"
@@ -15,14 +15,15 @@
 <script>
 
 export default{
-    beforeRouteEnter(to,from,next){
-        const answer = confirm('还没有登陆，要登陆吗');
-        if(answer){
-            next({name:'Person'});
-        }else{
-            next(false);
-        }
-    },
+    // 组件内守卫
+    // beforeRouteEnter(to,from,next){
+    //     const answer = confirm('还没有登陆，要登陆吗');
+    //     if(answer){
+    //         next({name:'Person'});
+    //     }else{
+    //         next(false);
+    //     }
+    // },
     data(){
         return {
             questionList: [
