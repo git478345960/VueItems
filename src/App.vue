@@ -10,7 +10,7 @@
     </div>
     <div class = "content">
         <router-view></router-view>
-        <router-view name = "academic"></router-view>
+        <!-- <router-view name = "academic"></router-view> -->
     </div>
   </div>
 </template>
