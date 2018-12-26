@@ -14,7 +14,7 @@ export default{
   created(){
 
     this.loginFlag = this.$route.matched[0].meta.login;
-    console.log(this.$route.matched[0].meta.login);
+    // console.log(this.$route.matched[0].meta.login);
   },
   methods:{
     handleplay(){
