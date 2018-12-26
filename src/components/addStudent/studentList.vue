@@ -3,32 +3,34 @@
     学生列表：
     <ul>
       <li
-       v-for = "(item,index) in list "
+       v-for = "(item,index) in newStudent "
       :key = "index"
       >{{item}}</li>
     </ul>
-    <div>
-      {{name + ',' + login + ','+ height}}
-      {{a}}
-    </div>
   </div>
 
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState,mapGetters } from 'vuex';
 export default{
 
-      props: ['list'],
+      // props: ['list'],
       computed:{
         ...mapState({
         name: state => state.name,
         login: state =>state.login,
-        height: state =>state.height
+        height: state =>state.height,
+        storeStudentList : state => state.studentList
       }),
-      a(){
-        return 123
-      }
+      ...mapGetters({
+        newStudent: 'newStudent'
+      })
+      // ...mapState(['studentList']),
+      // newStudent(){
+      //   return this.$store.getters.newStudent;
+      // }
+
       }
     }
 </script>

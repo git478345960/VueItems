@@ -1,7 +1,7 @@
 <template>
   <div>
-    <add-student @add = "add"></add-student>
-    <student-list :list = "list"></student-list>
+    <add-student ></add-student>
+    <student-list></student-list>
   </div>
 
 </template>
@@ -20,9 +20,9 @@ export default{
     }
   },
   methods: {
-    add(name){
-      this.list.push(name);
-    }
+    // add(name){
+    //   this.list.push(name);
+    // }
   }
 }
 </script>
