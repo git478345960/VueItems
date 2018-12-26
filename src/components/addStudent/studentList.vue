@@ -3,7 +3,7 @@
     学生列表：
     <ul>
       <li
-       v-for = "(item,index) in newStudent "
+       v-for = "(item,index) in storeStudentList "
       :key = "index"
       >{{item}}</li>
     </ul>
