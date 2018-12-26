@@ -7,14 +7,29 @@
       :key = "index"
       >{{item}}</li>
     </ul>
+    <div>
+      {{name + ',' + login + ','+ height}}
+      {{a}}
+    </div>
   </div>
 
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default{
 
-      props: ['list']
+      props: ['list'],
+      computed:{
+        ...mapState({
+        name: state => state.name,
+        login: state =>state.login,
+        height: state =>state.height
+      }),
+      a(){
+        return 123
+      }
+      }
     }
 </script>
 
