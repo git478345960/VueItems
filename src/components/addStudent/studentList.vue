@@ -21,7 +21,7 @@ export default{
         name: state => state.name,
         login: state =>state.login,
         height: state =>state.height,
-        storeStudentList : state => state.studentList
+        storeStudentList : state => state.student.studentList
       }),
       ...mapGetters({
         newStudent: 'newStudent'

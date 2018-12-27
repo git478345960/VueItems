@@ -27,7 +27,7 @@ export default{
     //     // this.storeStudentList.push(this.name);
     //     this.$store.commit('changeStudent',this.name);
     // }
-    ...mapActions(['changeStudent']),
+    ...mapActions('student',['changeStudent'])
   }
 }
 </script>

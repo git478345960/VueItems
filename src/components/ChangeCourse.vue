@@ -25,7 +25,6 @@
       >点击修改</button>
       </li>
     </ul>
-    <!-- <button class = "change-over">已全部修改完成</button> -->
     <router-link class = "change-over" tag="button" :to = "{name:'Learn'}">已全部修改完成</router-link>
     </template>
   </div>
@@ -43,7 +42,11 @@ export default {
     }
   },
   computed:{
-    ...mapState(['courseList'])
+    // ...mapState(['courseList'])
+    ...mapState('course',['courseList'])
+    // courseList(){
+    //     return this.$store.state.course.courseList
+    // }
   },
   methods:{
     change(index){
@@ -58,7 +61,8 @@ export default {
       const name = this.title;
       const price = this.price;
       const index = this.index;
-      this.$store.commit('changeCourse',{index,name,price});
+      // this.$store.commit('changeCourse',{index,name,price});
+      this.$store.commit('course/changeCourse',{index,name,price});
       this.isChanging = false;
 
     }
