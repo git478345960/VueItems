@@ -10,6 +10,7 @@ import Download from '../components/community/Download'
 import Person from '../components/community/Person'
 import Question from '../components/Question'
 import Error from '../components/Error'
+import ChangeCourse from '../components/ChangeCourse'
 const Home = () => import('@/components/Home');//懒加载
 Vue.use(Router)
 const router =  new Router({
@@ -40,7 +41,7 @@ const router =  new Router({
       },
       children:[
         {
-          path: 'academic', 
+          path: 'academic',
           name: 'Academic',
           component: Academic,
 
@@ -70,7 +71,7 @@ const router =  new Router({
     {
       path: '/learn',
       name: 'Learn',
-      component: Learn
+      component: Learn,
     },
     {
       path: '/student',
@@ -96,6 +97,11 @@ const router =  new Router({
           return {name: 'error'}
         }
       }
+    },
+    {
+      path: '/learn/changeCourse',
+      name: 'changeCourse',
+      component:ChangeCourse
     }
 
   ]

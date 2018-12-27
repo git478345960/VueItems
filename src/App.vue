@@ -20,15 +20,24 @@
 </script>
 
 <style>
+
   .content{
-    height:300px;
-    width:300px;
-    background-color:bisque;
+    height:600px;
+    width:1100px;
+    background-color:#fff;
+    margin:auto;
   }
   .active{
     color:blue;
   }
   .exactActive{
     color:red;
+  }
+  *{
+    margin:0;
+    padding:0;
+  }
+  li{
+    list-style:none;
   }
 </style>
