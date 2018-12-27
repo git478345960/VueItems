@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  strict: true,//使用该模式时，不能
+  strict: true,//使用严格模式
   state:{
     //  公共数据池
     // 可以通过this.$store.state.name属性访问到该值
@@ -12,7 +12,8 @@ export default new Vuex.Store({
     name: 'shanshan',
     height: 100,
     login: false,
-    studentList: []
+    studentList: [],
+    width: 100,
   },
   getters:{
     //对store的数据进行加工，相当于computed，
@@ -36,7 +37,7 @@ export default new Vuex.Store({
     //第二个参数可以传值，多个的话写成对象的形式。
     changeStudent(state,{name,number}){
       state.studentList.push(name + number);
-    }
+    },
 
   },
   actions:{
