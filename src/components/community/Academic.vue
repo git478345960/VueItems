@@ -24,19 +24,19 @@ export default{
     //         next(false);
     //     }
     // },
-     beforeRouteEnter(to,from,next){
-    const login = to.matched[0].meta.login;
-    if(login){
-      next();
-      return ;
-    }
-    const answer = confirm('还没有登陆，要登陆吗');
-        if(answer){
-            next({name:'Person'});
-        }else{
-            next(false);
-        }
-  },
+    //  beforeRouteEnter(to,from,next){
+    // const login = to.matched[0].meta.login;
+    // if(login){
+    //   next();
+    //   return ;
+    // }
+    // const answer = confirm('还没有登陆，要登陆吗');
+    //     if(answer){
+    //         next({name:'Person'});
+    //     }else{
+    //         next(false);
+    //     }
+  // },
     data(){
         return {
             questionList: [

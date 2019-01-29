@@ -36,9 +36,9 @@ const router =  new Router({
       name: 'Community',
       component: Community,
       redirect: '/community/academic',
-      meta:{
-        login: false
-      },
+      // meta:{
+      //   login: false
+      // },
       children:[
         {
           path: 'academic',
